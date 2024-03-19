@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "stacked_dao_backend": {
+      "declarations": {
+        "node_compatibility": true
+      },
+      "main": "src/stacked_dao_backend/main.mo",
+      "type": "motoko"
+    },
+    "stacked_dao_frontend": {
+      "dependencies": [
+        "stacked_dao_backend"
+      ],
+      "source": [
+        "src/stacked_dao_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "stacked_dao_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
