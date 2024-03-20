@@ -1,15 +1,23 @@
 {
   "canisters": {
-    "stacked_dao_backend": {
+    "treasury": {
       "declarations": {
         "node_compatibility": true
       },
-      "main": "src/stacked_dao_backend/main.mo",
+      "main": "src/stacked_dao_backend/treasury/main.mo",
+      "type": "motoko"
+    },
+    "governance": {
+      "declarations": {
+        "node_compatibility": true
+      },
+      "main": "src/stacked_dao_backend/governance/main.mo",
       "type": "motoko"
     },
     "stacked_dao_frontend": {
       "dependencies": [
-        "stacked_dao_backend"
+        "treasury",
+        "governance"
       ],
       "source": [
         "src/stacked_dao_frontend/dist"
