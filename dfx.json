@@ -18,10 +18,24 @@
       "workspace": "stacked_dao_frontend"
     }
   },
+  "networks": {
+    "development": {
+      "providers": [
+        "https://icp0.io"
+      ],
+      "type": "persistent"
+    },
+    "staging": {
+      "providers": [
+        "https://icp0.io"
+      ],
+      "type": "persistent"
+    }
+  },
   "defaults": {
     "build": {
       "args": "",
-      "packtool": ""
+      "packtool": "mops sources"
     }
   },
   "output_env_file": ".env",
