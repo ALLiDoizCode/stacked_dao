@@ -94,9 +94,9 @@ module {
         created_at_time : ?Nat64;
         amount : Nat;
     };
-    public type Result = { #Ok : Nat; #Err : TransferError };
-    public type Result_1 = { #Ok : Nat; #Err : ApproveError };
-    public type Result_2 = { #Ok : Nat; #Err : TransferFromError };
+    public type TransferResult = { #Ok : Nat; #Err : TransferError };
+    public type ApproveResult = { #Ok : Nat; #Err : ApproveError };
+    public type TransferFromResult = { #Ok : Nat; #Err : TransferFromError };
     public type StandardRecord = { url : Text; name : Text };
     public type Transaction = {
         burn : ?Burn;
@@ -203,10 +203,10 @@ module {
         icrc1_supported_standards : shared query () -> async [StandardRecord];
         icrc1_symbol : shared query () -> async Text;
         icrc1_total_supply : shared query () -> async Nat;
-        icrc1_transfer : shared TransferArg -> async Result;
-        icrc2_transfer_from : shared TransferFromArgs -> async Result_2;
+        icrc1_transfer : shared TransferArg -> async TransferResult;
+        icrc2_transfer_from : shared TransferFromArgs -> async TransferFromResult;
         icrc2_allowance : shared query AllowanceArgs -> async Allowance;
-        icrc2_approve : shared ApproveArgs -> async Result_1;
+        icrc2_approve : shared ApproveArgs -> async ApproveResult;
     } {
         return actor (canister) : actor {
             get_blocks : shared query GetBlocksRequest -> async GetBlocksResponse;
@@ -223,10 +223,10 @@ module {
             icrc1_supported_standards : shared query () -> async [StandardRecord];
             icrc1_symbol : shared query () -> async Text;
             icrc1_total_supply : shared query () -> async Nat;
-            icrc1_transfer : shared TransferArg -> async Result;
-            icrc2_transfer_from : shared TransferFromArgs -> async Result_2;
+            icrc1_transfer : shared TransferArg -> async TransferResult;
+            icrc2_transfer_from : shared TransferFromArgs -> async TransferFromResult;
             icrc2_allowance : shared query AllowanceArgs -> async Allowance;
-            icrc2_approve : shared ApproveArgs -> async Result_1;
+            icrc2_approve : shared ApproveArgs -> async ApproveResult;
         };
     };
 };

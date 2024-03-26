@@ -10,7 +10,7 @@ import Blob "mo:base/Blob";
 import Error "mo:base/Error";
 import Proposal "../models/Proposal";
 import { DAY; HOUR; MINUTE } "mo:time-consts";
-import ICRC2 "services/ICRC2";
+import ICRC2 "../services/ICRC2";
 import Constants "../Constants";
 import Source "mo:uuid/async/SourceV4";
 import UUID "mo:uuid/UUID";
